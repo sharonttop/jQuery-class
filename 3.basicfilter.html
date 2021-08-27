@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered mt-5">
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+            </table>
+        </div>
+        <h1>hi h1</h1>
+        <h2>hi h2</h2>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    
+    
+    <script>
+        // ●:eq() - 選取第 n 個(從0開始計算)
+        // ●:even - 選取第偶數個(從0開始計算)
+        // ●:odd - 選取第奇數個(從0開始計算)
+
+        //changing
+        $('td:odd').css('background','yellow');
+        $('td:first').css('background','green');
+
+
+
+
+        //有執行順序的差別
+        $('td:gt(2)').css('background','red');
+        
+        //DOM
+        // $('td:last').css('background','pink');
+        // $('td:last').css('color','white');
+        //主詞一樣可以直接串接
+
+        $('td:last').css('background','blue').css('color','white');
+        //選取h1~6
+        $(':header').css('color','red')
+
+
+        $('td:lt(8)').css('background','pink');
+        $('td:lt(2)').css('background','yellow');
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

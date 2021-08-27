@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered mt-5">
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+                <tr>
+                    <td>td0</td>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                </tr>
+            </table>
+        </div>
+        <h1>hi h1</h1>
+        <h2>hi h2</h2>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    
+    
+    <script>
+        
+        // $('td:eq(5)').css('background','yellow');
+        //和下面完全依樣
+        // $('td').eq(5).css('background','yellow');
+        // $('td').odd().eq(2).css('background','yellow');
+        $('td').css('background','yellow').odd().css('background','green').css('color','white').eq(2).css('background','red')
+        //會記住前面紀錄往後篩選，一層一層往後篩選
+
+
+
+
+    </script>
+</body>
+</html>

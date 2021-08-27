@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span>span hi</span>
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <p>only</p>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div class="box">box8</div>
+            <div class="box">box9</div>
+            <div class="box">box10</div>
+            <div class="box">box11</div>
+            <div class="box">box12</div>
+            <span>span last</span>
+            
+
+        </div>
+    </div>
+         <!-- <div class="container">
+            <div class="row">
+                  .box:first-child所有架構下只要符合第一個 小孩就會抓出來 
+                <div class="box">box1</div>
+                <div class="box">box2</div>
+                <div class="box">box3</div>
+                <div class="box">box4</div>
+                <div class="box">box5</div>
+                <div class="box">box6</div>
+                <div class="box">box7</div>
+                <div class="box">box8</div>
+                <div class="box">box9</div>
+                <div class="box">box10</div>
+                <div class="box">box11</div>
+                <div class="box">box12</div>
+                <span>span last</span>
+
+            </div>
+    </div>   -->
+    <div class="container">
+        <div class="box">new box</div>
+    </div>
+
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        // $('.box:first-child').css('background','red')
+        // //因為不是同一個架構下的第一個小孩所以不會有反應，此架構下第一個小孩為<span>hi</span>
+        // $('span:first-child').css('background','red')
+
+
+        // //不是第一個小孩就不互有反應
+        // $('span:last-child').css('background','green')
+
+        // $('.box:first-of-type').css('background','blue')
+        // //同一類別第一個小孩，就選的到。
+        // $('.box:last-of-type').css('background','pink')
+
+        // $('div:nth-of-type(2)').css('background','green')
+
+        $('.box:nth-of-type(2)').css('background','green')
+        // // :nth-of-type()同類選取第二個
+        // $('.box:nth-child(5)').css('background','red')
+        // //同架構下的第5個
+        // $('.box:nth-last-child(3)').css('background','blue')
+        // //同架構下倒數第3個
+
+        $('div:only-child').css('background','pink')
+        //div中只要是只有一個的就會抓到，只有一個的<div class="row">和另一個container只有一個div的<div class="box">new box</div>
+        $('div:only-of-type').css('background','red')
+        //幾乎跟only-child差不多意思
+
+
+
+
+
+
+        
+
+
+
+</script>
+</body>
+</html>
