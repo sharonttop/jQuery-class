@@ -9,17 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row mt-3">
             <form action="">
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group mr-3">
                         <select name="city" id="city">
                             <option value="0">基隆</option>
                             <option value="1">台北</option>
                             <option value="2">新北</option>
                         </select>
                     </div>
-                </div>
                     <div class="form-group">
                         <select name="district" id="district">
                             <option value="0">七堵區</option>
@@ -39,27 +38,43 @@
             ['中正', '大安', '信義'],
             ['蘆洲', '三重', '新店'],
         ];
-        $('#city').change(function(index) {
+        $('#city').change(function() {
+            // 1.我要知道使用者選擇的是哪個城市? 
+            // 2.能不能用迴圈的方式修改區域 OPTION 的名稱(可以先寫死一樣的名字)
+            //3.那我能不能在迴圈裏面，想辦法取得不同的城市個別的區域名稱，依次改動。
            
             console.log('#city changed');
-
             console.log('cityVal:', $(this).val());
+            console.log('district option',districtArray[$(this).val()]);
+            // $('district option').text(districtArray[$(this).val()]);
+            
+            const disNameArray = districtArray[$(this).val()];
 
-            console.log($(this).text(districtArray[$(this).val()][index]))
-           
+            console.log('disNameArray:', disNameArray);
+
+            // $('#district option').each(function() {
+
+            //     // console.log('text:',$(this).text());
+            //     // console.log('districtArray:', districtArray[index]);
+            //     // $(this).text(districtArray[$(this).val()][$(this)]);
+
+            //     $(this).text(districtArray[$(this).val()]);
+            // })
+            $('#district option').each(function(index,element) {
+                // $(this).text(districtArray[$(this).val()]);
+                // })
+                // 可以寫這樣$(this).text(disNameArray[$(this).val()]);
+                $(this).text(`${disNameArray[index]}區`);
+
+            });
             
         })
-
+        //$(selector).each(function(index,element))
+        // element - 当前的元素（也可使用 "this" 选择器）
         //JS迴圈 for(),forEach()
-        //JQ .each()
-        $('district option').each(function() {
+        //JQ .each() 每一個都要做一次
 
-            console.log('text:',$(this).text());
-            console.log('districtArray:', districtArray[index]);
-            
-            $(this).text('中正區');
-        })
 
-</script>
+    </script>
 </body>
 </html>
