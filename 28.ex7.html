@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            margin:0;
+            height: 300vh;
+        }
+        .warp{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(180, 180, 180);
+            position:fixed;
+            top:0;
+        }
+        .box {
+            background-color:pink;
+            height: 50px;
+            width: 0%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box"></div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+
+        console.log('body height:',$('body').height());
+
+        $(window).scroll(function() {
+            const bodyHeight = $('body').height();
+            console.log('scrollTop:',$(this).scrollTop());
+            const scrollTop = $(this).scrollTop();
+
+           const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop()
+           console.log('scrollBottom:',scrollBottom);
+
+            console.log('百分比:',scrollTop/bodyHeight);
+            const scollbar = scrollTop/bodyHeight;
+            $('.box').css('width',`${scollbar*100}%`)
+
+
+            while (scollbar == 0.6555555){
+                $('.box').css('width',`${(scollbar + 0.3333333)*100}%`)
+
+            }
+
+
+        })
+
+            /**
+             * 1.使用者滾到哪裡(scrollTop)?數字是多少?
+             * 2.網頁內容全長是多長?
+             * console.log('body height',$('body').height());
+
+             * 
+             * 3.計算出目前閱讀的百分比 ?分子是誰?分母是誰?
+             * 
+             * 4.最後，把這個百分比給 .box 的 css 寬度。
+             * 
+             */
+
+
+
+
+
+    </script>
+</body>
+</html>

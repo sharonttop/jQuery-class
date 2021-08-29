@@ -6,25 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin:0;
+        }
         body {
             height: 5000vh;
             width: 500vw;
+        }
+        .warp{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(180, 180, 180);
+            position:fixed;
+            top:0;
+        }
+        .box {
+            background-color:pink;
+            height: 50px;
+            width: 20%;
         }
 
     </style>
 </head>
 <body>
+    <div class="warp">
+        <div class="box"></div>
+    </div>
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
         $(window).scroll(function() {
-            console.log('scrollTop',$(this).scrollTop());
-            console.log('scrollLeft',$(this).scrollLeft());
+            console.log('scrolled');
+
+            console.log('scrollTop:',$(this).scrollTop());
+            console.log('scrollLeft:',$(this).scrollLeft());
 
             // scrollTop()偵測捲軸位置或是指定捲軸位置，()內無值為偵測位置，有值則為指定位置，可以知道使用者現在在哪
 
         })
         $(window).resize(function() {
-            console.log('resize width:',$(this).width)();
+            console.log('resize');
+
+            console.log('resize width:',$(this).width());
             console.log('resize height:',$(window).height());
         })
 
