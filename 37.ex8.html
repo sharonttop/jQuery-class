@@ -21,8 +21,8 @@
             height: 100px;
             background-color: lightblue;
             position: absolute;
-            top: 60px;
-            left: 60px;
+            top: 0px;
+            left: 0px;
         }
     </style>
 </head>
@@ -52,12 +52,50 @@
     </div>
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
-        $('button').on('click', function (){
-            console.log('hi')
-            let clickBotton =$(this);
-            console.log(clickBotton)
+        $('#right').on('click', function (){
+            console.log('right')
+            $('.box').css('left','+=100')
+        })
+        $('#down').on('click', function (){
+            console.log('down')
+            $('.box').css('top','+=100')
+        })
+        $('#left').on('click', function (){
+            console.log('left')
+            if(parseInt($('.box').css('left')) <= 0) return;
+            $('.box').css('left','-=100')
+        })
+        $('#up').on('click', function (){
+            console.log('up')
+            if(parseInt($('.box').css('top')) <= 0) return;
+            $('.box').css('top','-=100')
+        })
+        //可以監聽DOM，按鍵盤上下左右
+        $(document).on('keydown',function() {
+            console.log('event',event.which)
 
-            //transform ,`translateY(${+=100}px)`
+            //left 37
+            if(event.which === 37){
+                if(parseInt($('.box').css('left')) <= 0) return;
+                 $('.box').css('left','-=100')
+            }
+
+            if(event.which === 39){
+                console.log('right')
+            $('.box').css('left','+=100')
+            }
+
+            if(event.which === 38){
+                console.log('down')
+            $('.box').css('top','+=100')
+            }
+
+            if(event.which === 40){
+                if(parseInt($('.box').css('top')) <= 0) return;
+                $('.box').css('top','-=100')
+            }
+
+
         })
     </script>
     
