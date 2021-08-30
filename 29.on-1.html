@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="add" class="btn btn-primary">Add</div>
+        </div>
+
+        <div class="row">
+            <p>清單</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        // let x = for(i=0,i>){ }
+        $('#add').click(function() {
+            $('ul').append(`<li>item 3</li>`)
+            //append是不修改直接塞進去，html會取代掉
+        });
+
+        // $('li').click(function() {
+        //     console.log('hi li');
+        //     //後來append增加的物件item 3，不會加綁click
+        // })
+        $('ul').on('click','li', function() {
+            console.log('hi li',$(this).text());
+            //先設定一個原本就存在的監聽對象('ul')，在設定要做的動作,實際要監聽的對象。
+        })
+
+    </script>
+</body>
+</html>
