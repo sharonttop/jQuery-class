@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        console.log('box background-color',$('.box').css('background-color'));
+        //取值
+
+        var boxStyle = {
+                color: "#fff",
+                background: "#000",
+                //設定為物件
+            };
+
+
+        $('.box').on('click', function(){
+            if($('.box').css('background-color') == 'rgb(170, 255, 170)') { 
+                // $(this).css('background-color','pink')
+                //設定背景為pink
+
+                $(this).css(boxStyle);
+                //用抓obj的方式拿值
+            }else{
+                $(this).css('background-color','#afa')
+                //設定背景為#afa
+            }
+        })
+    </script>
+    
+</body>
+</html>

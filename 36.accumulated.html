@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #afa;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+
+        // $('.box').on('click', function(){
+        //     console.log('hi');
+        // ---------
+        //     const boxWidth = $('.box').css('width');
+        //     console.log('boxWidth',boxWidth);
+        //     console.log('boxWidth + 10',boxWidth +10);
+        //     console.log('boxWidth + 10',parseInt(boxWidth) + 10);
+        // -------
+        //     // parseInt() 取前面的數字，不是數字的部分開始斷
+        //     $('.box').css('width', parseInt(boxWidth) + 10);
+            
+        // })
+        $('.box').on('click', function(){
+            console.log('hi');
+            $(this).css("width","+=100");
+            //累加
+            
+        })
+    </script>
+    
+</body>
+</html>
