@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <table class="table table-bordered mt-5">
-                <tr class='1'>
+                <tr>
                     <td>
                         <input type="checkbox" aria-label="Checkbox for following text input">
                     </td>
@@ -45,22 +45,25 @@
     
     
     <script>
+        //方法一
+        $('input[type="checkbox"]').click(function () {
+            console.log('hi',$(this).attr('checked'));//屬性attr 抓的到預設checked即使取消後也還是回傳checked
+            console.log('hi',$(this).prop('checked'));//中文翻也是屬性，型態
 
-        $('input').click(function () {
-            // $('td').eq(1).css('background','blue');
-            // $('tr').children('td').css('border','1px solid red');
-
-
-            $('td').click (function() {
-            console.log('click');
-            $(this).css('background','pink')
-            $(this).next().css('background','pink')
-            $(this).next().next().css('background','pink')
-            $(this).next().next().next().css('background','pink')
-
-            }) 
+            if($(this).prop('checked')){
+                $(this).parent().parent(). css('background','lightblue')
+            }else{
+                $(this).parent().parent(). css('background','transparent')
+            }
 
         }) 
+
+        //方法二
+        // $('input[type="checkbox"]').click(function () {
+        //     //每次點選都重新轉成透明
+        //     $('tr').css('background','transparent')
+        //     $('input:checked').closest('tr').css('background','lightblue')
+        // }) 
     </script>
 </body>
 </html>
