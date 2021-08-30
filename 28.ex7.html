@@ -10,6 +10,7 @@
         body {
             margin:0;
             height: 300vh;
+            transition:.5s;
         }
         .warp{
             width: 100%;
@@ -17,11 +18,20 @@
             background-color: rgb(180, 180, 180);
             position:fixed;
             top:0;
+            overflow: hidden;
         }
         .box {
             background-color:pink;
             height: 50px;
             width: 0%;
+        }
+
+        .img-wrap{
+            position: absolute;
+            top: 350px;
+            left: 40%;
+            transform: translateX(320px);
+            opacity: 1;
         }
 
     </style>
@@ -30,39 +40,27 @@
     <div class="warp">
         <div class="box"></div>
     </div>
+
+    <div class="img-wrap">
+        <img src="./imgs/3.png" alt="">
+    </div>
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
-
-        // console.log('body height:',$('body').height());
-
-        // $(window).scroll(function() {
-        //     const bodyHeight = $('body').height();
-        //     console.log('scrollTop:',$(this).scrollTop());
-        //     const scrollTop = $(this).scrollTop();
-
-        //    const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop()
-        //    console.log('scrollBottom:',scrollBottom);
-
-        //     console.log('百分比:',scrollTop/bodyHeight);
-        //     const scollbar = scrollTop/bodyHeight;
-        //     $('.box').css('width',`${scollbar*100}%`)
-
-
-        //     while (scollbar == 0.6555555){
-        //         $('.box').css('width',`${(scollbar + 0.3333333)*100}%`)
-
-        //     }
-        // })
         console.log('body height',$('body').height())
 
         $(window).resize(function() {
-
+            changeBoxWidth();
         })
 
 
         
         $(window).scroll(function() {
-           let scrollTop = $(window).scrollTop()
+            changeBoxWidth();
+  
+
+        })
+        function changeBoxWidth(){
+            let scrollTop = $(window).scrollTop()
         //  1.使用者滾到哪裡(scrollTop)?數字是多少?
             let bodyHeight= $('body').height()
             console.log('scrollTop - bodyHeight',scrollTop - bodyHeight); //減到最後會變成bodyHeight
@@ -73,13 +71,18 @@
         let percent = scrollTop / (bodyHeight - windowHeight) * 100;//減掉灰色棒棒
         //  4.最後，把這個百分比給 .box 的 css 寬度。
             
-        $('.box') .css('width', `${percent}%`);
-  
+            $('.box') .css('width', `${percent}%`);
 
-        })
-        // function changeBoxWidth(percent){
-        //     $('.box') .css('width', `${percent}%`);
-        // }
+            if(percent >20){
+                $('body').css('background','orange');
+                $('.img.wrap').css('transform','translate(0px)').css('opacity','1')
+
+            }
+            else{
+                $('body').css('background','transparent');
+                $('.img.wrap').css('transform','translate(320px)').css('opacity','0')
+            }
+        }
 
 
 
