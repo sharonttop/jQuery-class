@@ -33,42 +33,53 @@
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
 
-        console.log('body height:',$('body').height());
+        // console.log('body height:',$('body').height());
 
-        $(window).scroll(function() {
-            const bodyHeight = $('body').height();
-            console.log('scrollTop:',$(this).scrollTop());
-            const scrollTop = $(this).scrollTop();
+        // $(window).scroll(function() {
+        //     const bodyHeight = $('body').height();
+        //     console.log('scrollTop:',$(this).scrollTop());
+        //     const scrollTop = $(this).scrollTop();
 
-           const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop()
-           console.log('scrollBottom:',scrollBottom);
+        //    const scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop()
+        //    console.log('scrollBottom:',scrollBottom);
 
-            console.log('百分比:',scrollTop/bodyHeight);
-            const scollbar = scrollTop/bodyHeight;
-            $('.box').css('width',`${scollbar*100}%`)
+        //     console.log('百分比:',scrollTop/bodyHeight);
+        //     const scollbar = scrollTop/bodyHeight;
+        //     $('.box').css('width',`${scollbar*100}%`)
 
 
-            while (scollbar == 0.6555555){
-                $('.box').css('width',`${(scollbar + 0.3333333)*100}%`)
+        //     while (scollbar == 0.6555555){
+        //         $('.box').css('width',`${(scollbar + 0.3333333)*100}%`)
 
-            }
+        //     }
+        // })
+        console.log('body height',$('body').height())
 
+        $(window).resize(function() {
 
         })
 
-            /**
-             * 1.使用者滾到哪裡(scrollTop)?數字是多少?
-             * 2.網頁內容全長是多長?
-             * console.log('body height',$('body').height());
 
-             * 
-             * 3.計算出目前閱讀的百分比 ?分子是誰?分母是誰?
-             * 
-             * 4.最後，把這個百分比給 .box 的 css 寬度。
-             * 
-             */
+        
+        $(window).scroll(function() {
+           let scrollTop = $(window).scrollTop()
+        //  1.使用者滾到哪裡(scrollTop)?數字是多少?
+            let bodyHeight= $('body').height()
+            console.log('scrollTop - bodyHeight',scrollTop - bodyHeight); //減到最後會變成bodyHeight
+        //  2.網頁內容全長是多長?
+            let windowHeight = $(window).height(); //灰色棒棒
 
+        //  3.計算出目前閱讀的百分比 ?分子是誰?分母是誰?
+        let percent = scrollTop / (bodyHeight - windowHeight) * 100;//減掉灰色棒棒
+        //  4.最後，把這個百分比給 .box 的 css 寬度。
+            
+        $('.box') .css('width', `${percent}%`);
+  
 
+        })
+        // function changeBoxWidth(percent){
+        //     $('.box') .css('width', `${percent}%`);
+        // }
 
 
 
