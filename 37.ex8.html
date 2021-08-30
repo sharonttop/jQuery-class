@@ -54,10 +54,12 @@
     <script>
         $('#right').on('click', function (){
             console.log('right')
+            if(parseInt($('.box').css('left')) >= 700) return;
             $('.box').css('left','+=100')
         })
         $('#down').on('click', function (){
             console.log('down')
+            if(parseInt($('.box').css('top')) >= 300) return;
             $('.box').css('top','+=100')
         })
         $('#left').on('click', function (){
@@ -77,22 +79,22 @@
             //left 37
             if(event.which === 37){
                 if(parseInt($('.box').css('left')) <= 0) return;
-                 $('.box').css('left','-=100')
+                $('.box').css('left','-=100')
             }
-
+            //right 39
             if(event.which === 39){
-                console.log('right')
-            $('.box').css('left','+=100')
+                if(parseInt($('.box').css('left')) >= 700) return;
+                $('.box').css('left','+=100')
             }
-
+            //up 38
             if(event.which === 38){
-                console.log('down')
-            $('.box').css('top','+=100')
-            }
-
-            if(event.which === 40){
                 if(parseInt($('.box').css('top')) <= 0) return;
                 $('.box').css('top','-=100')
+            }
+            //down 40
+            if(event.which === 40){
+                if(parseInt($('.box').css('top')) >= 300) return;
+                $('.box').css('top','+=100')
             }
 
 

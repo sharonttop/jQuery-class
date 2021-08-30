@@ -17,15 +17,16 @@
             <p>清單</p>
             <ul>
                 <li>item 1</li>
-                <li>item 2</li>
             </ul>
         </div>
     </div>
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
-        // let x = for(i=0,i>){ }
+        let i=2 ;
         $('#add').click(function() {
-            $('ul').append(`<li>item 3</li>`)
+            k =i++;
+            $('ul').append(`<li>item ${k}</li>`)
+            // console.log(`<li>item ${k}</li>`)
             //append是不修改直接塞進去，html會取代掉
         });
 

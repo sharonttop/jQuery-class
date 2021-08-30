@@ -18,7 +18,7 @@
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
         console.log('box background-color',$('.box').css('background-color'));
-        //取值
+        //取得box的背景色
 
         var boxStyle = {
                 color: "#fff",
@@ -29,6 +29,7 @@
 
         $('.box').on('click', function(){
             if($('.box').css('background-color') == 'rgb(170, 255, 170)') { 
+                //不能用#afa一定要用rgb(170, 255, 170)
                 // $(this).css('background-color','pink')
                 //設定背景為pink
 
