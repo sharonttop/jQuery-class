@@ -13,10 +13,11 @@
 
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
+
         const sayHi = function () {
             console.log('sayHi');
         }
-        
+        //function要同一個人。        
         $('#on').on('click',function(){
             $('#sayHi').on('click',sayHi);
         })

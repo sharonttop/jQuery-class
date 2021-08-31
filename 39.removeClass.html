@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color:rgb(53, 150, 53);
+        }
+        .w200 {
+            width: 200px;            
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text">
+    <button class="colorchange">colorchange</button>
+    <button class="addClass">addClass</button>
+    <button class="removeClass">removeClass</button>
+    <div class="box"></div>
+    
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        
+        $('.colorchange').on('click', function() {
+            let inputVal = $('input').val()
+            console.log($('.box').css('background-color'))
+            $('.box').css('background-color',inputVal);
+            console.log($('.box').css('background-color',inputVal))
+
+        })
+
+        $('.addClass').on('click', function() {
+            $('.box').addClass('w200');
+        })
+
+        $('.removeClass').on('click', function() {
+            $('.box').removeClass('w200');
+        })
+    </script>
+    
+</body>
+</html>

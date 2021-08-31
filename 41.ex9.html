@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .small {
+            font-size: 0.8rem;
+        }
+        .moddle {
+            font-size: 1rem;
+        }
+        .large {
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="btn-group">
+                <button class="btn btn-s btn-info">S</button>
+                <button class="btn btn-m btn-info">M</button>
+                <button class="btn btn-l btn-info">L</button>
+            </div>
+        </div>
+        <div class="row">
+            <h2>jQuery</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil sit sunt ratione provident saepe obcaecati molestiae, ex quam, labore eveniet perspiciatis consectetur tenetur tempora expedita non. Optio excepturi officiis impedit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil sit sunt ratione provident saepe obcaecati molestiae, ex quam, labore eveniet perspiciatis consectetur tenetur tempora expedita non. Optio excepturi officiis impedit.</p>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        // 不用toggle，比較適合適用於開跟關只有兩個的情況。
+        // $('.btn-s').on('click', function () {
+        //     $('p').removeClass().addClass('small');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // })
+        // $('.btn-m').on('click', function () {
+        //     $('p').removeClass().addClass('moddle');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // })
+        // $('.btn-l').on('click', function () {
+        //     $('p').removeClass().addClass('large');
+        //     $(this).addClass('active').siblings().removeClass('active');
+        // })
+        $('.btn').on('click',function () {
+            console.log('hi S',$(this).is(':contains("S")'))
+            console.log('hi M',$(this).is(':contains("M")'))
+            console.log('hi L',$(this).is(':contains("L")'))
+            
+            if($(this).is(':contains("S")')){
+                $('p').removeClass().addClass('small');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+             
+            if($(this).is(':contains("M")')){
+            $('p').removeClass().addClass('moddle');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+            if($(this).is(':contains("L")')){
+                $('p').removeClass().addClass('large');
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+
+
+        })
+    </script>
+    
+</body>
+</html>
