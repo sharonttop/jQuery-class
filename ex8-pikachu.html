@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+    
+        body {
+            background-color: #EBB471;
+        }
         .wrap {
             width: 800px;
             height: 480px;
@@ -31,36 +35,74 @@
             height: 480px;
             background:url("./imgs/sky.gif");
         }
+        .bg {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background-color:beige;
+        }
+        .bg-1 {
+            background-color:#B1B6B8;
+        }
+        .bg-2 {
+            background-color:#DFC199;
+        }
+        .bg-3 {
+            background-color:#B7D1D4;
+        }
+        .bg-4 {
+            background-color:#F2B2AC;
+        }
+        .bg-5 {
+            background-color:#F3D3CA;
+        }
+        .bg-6 {
+            background-color:rgb(255, 255, 255);
+        }
     </style>
 </head>
 <body>
-    <div class="wrap mx-auto mt-3">
-        <div class="sky">
-            <div>
-                <img src="./imgs/Pikachu Running .gif" alt="">
+    
+        <div class="container-fluid d-flex">
+            <div class="bg-change mt-3">
+                <div class="bg bg-1"></div>
+                <div class="bg bg-2"></div>
+                <div class="bg bg-3"></div>
+                <div class="bg bg-4"></div>
+                <div class="bg bg-5"></div>
+                <div class="bg bg-6"></div>
+            </div>
+            <div class="wrap mx-auto mt-3">
+                <div class="sky">
+                    <div>
+                        <img src="./imgs/Pikachu Running .gif" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="py-3 text-center">
-        <div>
-            <button id="up" class="btn btn-info">
-                <i class="fas fa-caret-up"></i>
-            </button>
+
+
+        <div class="py-3 text-center">
+            <div>
+                <button id="up" class="btn btn-info">
+                    <i class="fas fa-caret-up"></i>
+                </button>
+            </div>
+            <div class="py-1">
+                <button id="left" class="btn btn-info mx-3">
+                    <i class="fas fa-caret-left"></i>
+                </button>
+                <button id="right" class="btn btn-info mx-3">
+                    <i class="fas fa-caret-right"></i>
+                </button>
+            </div>
+            <div>
+                <button id="down" class="btn btn-info">
+                    <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
         </div>
-        <div class="py-1">
-            <button id="left" class="btn btn-info mx-3">
-                <i class="fas fa-caret-left"></i>
-            </button>
-            <button id="right" class="btn btn-info mx-3">
-                <i class="fas fa-caret-right"></i>
-            </button>
-        </div>
-        <div>
-            <button id="down" class="btn btn-info">
-                <i class="fas fa-caret-down"></i>
-            </button>
-        </div>
-    </div>
+
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
         $('#right').on('click', function (){
@@ -109,6 +151,37 @@
             }
 
 
+        })
+
+        $('.bg-1').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-1').css('background-color')
+            $('body').css('background-color',bgcolor)
+        })
+        $('.bg-2').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-2').css('background-color')
+            $('body').css('background-color',bgcolor)
+        })
+        $('.bg-3').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-3').css('background-color')
+            $('body').css('background-color',bgcolor)
+        })
+        $('.bg-4').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-4').css('background-color')
+            $('body').css('background-color',bgcolor)
+        })
+        $('.bg-5').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-5').css('background-color')
+            $('body').css('background-color',bgcolor)
+        })
+        $('.bg-6').on('click', function(){
+            //  console.log('hi',$('.bg-1').css('background-color'))
+            let bgcolor = $('.bg-6').css('background-color')
+            $('body').css('background-color',bgcolor)
         })
     </script>
     
