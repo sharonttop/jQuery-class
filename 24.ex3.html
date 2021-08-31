@@ -5,23 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-        .container{
-            display: flex;
-        }
-        .circle{
-            margin-left:20px;
-            width: 100px;
-            height: 100px;
-            border-radius:50%;
-            overflow: hidden;
-            /* 讓圖片切成圓形 */
-            /* border:2px  solid #fff; */
-        }
+
+
         img {
             width: 100%;
             height: 100%;
             border:2px  solid #fff;
+            border-radius: 50%;
 
         }
 
@@ -30,18 +22,21 @@
 </head>
 <body>
     <div class="container">
-        <div class="circle"><img src="./imgs/person1.jpg" alt=""></div>
-        <div class="circle"><img src="./imgs/person2.jpg" alt=""></div>
-        <div class="circle"><img src="./imgs/person3.jpg" alt=""></div>
-        <div class="circle"><img src="./imgs/person4.jpg" alt=""></div>
-        <div class="circle"><img src="./imgs/person5.jpg" alt=""></div>
+        <div class="row">
+            <div class="col"><img src="./imgs/person1.jpg" alt=""></div>
+            <div class="col"><img src="./imgs/person2.jpg" alt=""></div>
+            <div class="col"><img src="./imgs/person3.jpg" alt=""></div>
+            <div class="col"><img src="./imgs/person4.jpg" alt=""></div>
+            <div class="col"><img src="./imgs/person5.jpg" alt=""></div>
+        </div>
     </div>
     
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
-        $('.circle').click(function() {
+        $('img').click(function() {
             console.log('click');
-            $(this).css('border','3px solid red').siblings().css('border','transparent');
+            $(this).css('border','3px solid red').parent().siblings().children().css('border','3px solid transparent');
+            //<div class="col">只有一個img，要先往回到父層.siblings()在選回子層將紅圈消失
         })
     </script>
 </body>

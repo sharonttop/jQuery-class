@@ -45,10 +45,11 @@
     
     
     <script>
-        //方法一
+        //方法一 2021 08 30 15 40 19 00:38:05
         $('input[type="checkbox"]').click(function () {
-            console.log('hi',$(this).attr('checked'));//屬性attr 抓的到預設checked即使取消後也還是回傳checked
-            console.log('hi',$(this).prop('checked'));//中文翻也是屬性，型態
+            console.log('hi',$(this).attr('checked'));
+            //屬性attribute 會抓的到的是預設在標籤上的checked即使勾勾取消後也還是回傳checked，並不是抓取當下的狀態，而是確認html有沒有含有此屬性
+            console.log('hi',$(this).prop('checked'));//property 翻譯也叫屬性，實際上是看當下的狀態
 
             if($(this).prop('checked')){
                 $(this).parent().parent(). css('background','lightblue')

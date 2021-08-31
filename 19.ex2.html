@@ -1,32 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ex2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
-        .box{
-            width: 100px;
+        .box {
             height: 100px;
-            background-color: rgb(160, 255, 223);
         }
     </style>
 </head>
+
 <body>
-    <div class="box">box1</div>
-    <div class="box">box2</div>
-    <div class="box">box3</div>
-    <div class="box">box4</div>
-    <div class="box">box5</div>
+    <div class="container">
+        <div class="row">
+            <div class="box autobg col-3">box1</div>
+            <div class="box autobg col-3">box2</div>
+            <div class="box autobg col-3">box3</div>
+            <div class="box autobg col-3">box4</div>
+            <div class="box autobg col-3">box5</div>
+            <div class="box autobg col-3">box6</div>
+            <div class="box autobg col-3">box7</div>
+            <div class="box autobg col-3">box8</div>
+            <div class="box autobg col-3">box9</div>
+            <div class="box autobg col-3">box10</div>
+            <div class="box autobg col-3">box11</div>
+            <div class="box autobg col-3">box12</div>
+        </div>
+    </div>
 
-    <script src="./jquery/jquery-3.6.0.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script>
-        $('.box').click (function() {
-            console.log('click');
-            $(this).css('background','pink')
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
 
-        }) 
+        function getRBGA() {
+            return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundImage = getRBGA();
+        });
+
+    // $('.autobg').each(function (index, currentElement) {
+    //     currentElement.style.backgroundImage = getRBGA();
+    // });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.box').on('click', function () {
+            // console.log('hi');
+            $(this).css('background', 'lightblue').nextAll().css('background', 'lightblue');
+        });
     </script>
 </body>
+
 </html>
