@@ -68,7 +68,7 @@
             let windowHeight = $(window).height(); //灰色棒棒
 
         //  3.計算出目前閱讀的百分比 ?分子是誰?分母是誰?
-        let percent = scrollTop / (bodyHeight - windowHeight) * 100;//減掉灰色棒棒
+        let percent = scrollTop / (bodyHeight - windowHeight) * 100;//灰色槓槓以上到頂的距離(會因為網頁高度改變而改變) / 整個畫面高 - 灰色棒棒
         //  4.最後，把這個百分比給 .box 的 css 寬度。
             
             $('.box') .css('width', `${percent}%`);
