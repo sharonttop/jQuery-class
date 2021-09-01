@@ -17,17 +17,17 @@
     <button data-animation-name = "animate__flash">flash</button>
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
-        //方法一用data-name
+        // 方法一用data-name
         // $('button').on('click', function(){
         //     console.log('my data',$(this).data('animation-name'));
         //     let animateName =$(this).data('animation-name')
         //     //設定一個變數來接data內容用一開始取的名來接就會抓到值可以應用於各種轉換，包括bootstrap也經常以此方法設定
 
-        //     //前贅字支援多個使用同一function
-        //     $('h1').addClass(animateName).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        //         $(this).removeClass(animateName);
+            // //前贅字支援多個使用同一function
+            // $('h1').addClass(animateName).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            //     $(this).removeClass(animateName);
 
-        //     });
+            // });
 
             
         // })
@@ -39,9 +39,8 @@
             
             $('h1').addClass(animateName).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
                 $(this).removeClass(animateName);
-
+                //前贅字結合on和one的寫法可以多個事件做一樣的動作(同一個function)不管是什麼樣的瀏覽器，有無需要加前贅字的版本全部移除，支援性大大提升，打包工具的其中一個功能就是會自動幫你加css的前贅字
             });
-
             
         })
     </script>
