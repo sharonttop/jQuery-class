@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin:8px;
+        }
+        .height {
+            height: 1200px;
+            width: 100%;
+            background-color: rgb(189, 188, 188);
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="height"></div>
+    <div class="box"></div>
+    <div class="height"></div>
+
+
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        
+        console.log('box offset',$('.box').offset());
+        console.log('box offset',$('.box').offset().left);
+        console.log('box offset',$('.box').offset().top);
+        // 移動到網頁的 top:50,left:100pc這個絕對位置
+        // $('.box').offset({
+        //     top:60,
+        //     left:200
+        // })
+
+        $(window).scroll(function() {
+            console.log('scrollTop',$(window).scrollTop());
+            console.log('windowheight',$(window).height());
+
+            // if($(window).scrollTop()> 900) {
+            //     $('.box').css('background','orange');
+            //     //簡單版本，直接設定scrollTop移動到哪處才變色
+            // }
+            
+            if($(window).scrollTop()>($('.box').offset().top - $(window).height()/2)) {
+                $('.box').css('background','orange');
+            // 請程式計算算出要呈現的位置
+            }
+
+        })
+        
+// offset() - 取得一個物件，包含top和left 
+// offset().left - 取得X座標 
+// offset().top - 取得Y座標 
+// 也可以傳入一個物件設定他的位置(數值為字串)
+
+    </script>
+    
+</body>
+</html>

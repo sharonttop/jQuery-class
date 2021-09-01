@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            position: relative;
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+            margin:50px;
+            padding: 10px;
+
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            /* margin:10px; */
+        }
+        .box2{
+
+            background-color: rgb(244, 171, 247);
+            /* margin:10px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        console.log('position',$('.box').position())
+        console.log('position',$('.box2').position())
+
+    </script>
+
+</body>
+</html>

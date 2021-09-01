@@ -1,0 +1,75 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+    <style>
+        body {
+            margin: 0;
+            height: 500vh;
+        }
+
+        .banner {
+            height: calc(100vh - 60px);
+            background: url(https://cdn.pixabay.com/photo/2021/06/27/20/32/lighthouse-6369963_960_720.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        nav {
+            height: 60px;
+            background-color: lightgreen;
+            text-align: center;
+            color: rgb(245, 245, 245);
+            position: static;
+            /* 預設position: static不用設定; */
+        }
+
+        .fixed {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner"></div>
+    <nav>Hello Nav</nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(window).scroll(function() {
+            console.log('window-scrollTop',$(window).scrollTop());
+            console.log('nav-offset-top',$('nav').offset().top);
+
+
+            // if($(window).scrollTop()>($('.box').offset().top - $(window).height()/2)) {
+            //     $('.box').css('background','orange');
+            // // 請程式計算算出要呈現的位置
+            // }
+
+            if($(window).scrollTop()>= $('nav').offset().top) {
+                $('nav').css('background','orange').addClass('fixed');
+
+                //簡單版本，直接設定scrollTop移動到哪處才變色
+            }
+
+            if($(window).scrollTop() <= $('.banner').outerHeight(true)) {
+                console.log('banner-outerHeight',$('.banner').outerHeight(true))
+                $('nav').css('background','orange').removeClass('fixed');
+
+                //簡單版本，直接設定scrollTop移動到哪處才變色
+            }
+        })
+    </script>
+
+</body>
+
+</html>
