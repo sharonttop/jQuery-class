@@ -33,6 +33,7 @@
             left: 0;
             right: 0;
             top: 0;
+            transition: 1s;
         }
     </style>
 </head>
@@ -50,22 +51,18 @@
             console.log('nav-offset-top',$('nav').offset().top);
 
 
-            // if($(window).scrollTop()>($('.box').offset().top - $(window).height()/2)) {
-            //     $('.box').css('background','orange');
-            // // 請程式計算算出要呈現的位置
-            // }
 
             if($(window).scrollTop()>= $('nav').offset().top) {
-                $('nav').css('background','orange').addClass('fixed');
+                $('nav').css('background','orange').css('transition','1s').addClass('fixed');
 
-                //簡單版本，直接設定scrollTop移動到哪處才變色
+                //當$(window).scrollTop()比nav所在的位置還要下面時，就fixed固定
             }
 
             if($(window).scrollTop() <= $('.banner').outerHeight(true)) {
                 console.log('banner-outerHeight',$('.banner').outerHeight(true))
-                $('nav').css('background','orange').removeClass('fixed');
+                $('nav').css('background','lightgreen').css('transition','1s').removeClass('fixed');
 
-                //簡單版本，直接設定scrollTop移動到哪處才變色
+                //返回時超banner(outerHeight)的高度時就取消fixed
             }
         })
     </script>

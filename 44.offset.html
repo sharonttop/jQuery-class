@@ -32,9 +32,9 @@
     <script>
         
         console.log('box offset',$('.box').offset());
-        console.log('box offset',$('.box').offset().left);
-        console.log('box offset',$('.box').offset().top);
-        // 移動到網頁的 top:50,left:100pc這個絕對位置
+        console.log('box offset-left',$('.box').offset().left);
+        console.log('box offset-top',$('.box').offset().top);
+        // 移動到網頁的 top:50,left:100px這個絕對位置
         // $('.box').offset({
         //     top:60,
         //     left:200
@@ -43,12 +43,13 @@
         $(window).scroll(function() {
             console.log('scrollTop',$(window).scrollTop());
             console.log('windowheight',$(window).height());
-
+            //方法一
             // if($(window).scrollTop()> 900) {
             //     $('.box').css('background','orange');
             //     //簡單版本，直接設定scrollTop移動到哪處才變色
             // }
             
+            //方法二
             if($(window).scrollTop()>($('.box').offset().top - $(window).height()/2)) {
                 $('.box').css('background','orange');
             // 請程式計算算出要呈現的位置

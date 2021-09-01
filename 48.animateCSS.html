@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+    <h1 class="animate__animated">An animated element</h1>
+        <!-- 設定data-開頭animation-name可以自己取名將內容設定為要取用的值 -->
+    <button data-animation-name = "animate__bounce">bounce</button>
+    <button data-animation-name = "animate__flash">flash</button>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        //方法一用data-name
+        // $('button').on('click', function(){
+        //     console.log('my data',$(this).data('animation-name'));
+        //     let animateName =$(this).data('animation-name')
+        //     //設定一個變數來接data內容用一開始取的名來接就會抓到值可以應用於各種轉換，包括bootstrap也經常以此方法設定
+
+        //     //前贅字支援多個使用同一function
+        //     $('h1').addClass(animateName).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        //         $(this).removeClass(animateName);
+
+        //     });
+
+            
+        // })
+
+        //方法二用抓text()的方式
+        $('button').on('click', function(){
+            console.log('my-data',$(this).text());
+            let animateName ="animate__"+ $(this).text();
+            
+            $('h1').addClass(animateName).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this).removeClass(animateName);
+
+            });
+
+            
+        })
+    </script>
+</body>
+</html>
