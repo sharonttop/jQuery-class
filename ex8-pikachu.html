@@ -11,8 +11,34 @@
     <style>
     
         body {
-            background-color: #f0bc7e;
+            background-color: #f7d264;
+            height: 500vh;
+
         }
+        .banner{
+            height: calc(60vh - 60px);
+            background:url(./imgs/pokemon-banner2.jpg) no-repeat 50% 45%;
+            background-size: cover;
+
+        }
+        nav {
+            height: 60px;
+            background-color: rgb(96, 184, 115);
+            text-align: center;
+            color: rgb(245, 245, 245);
+            
+            position: static;
+            /* 預設position: static不用設定; */
+        }
+
+        .fixed {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            transition: 1s;
+        }
+
         .wrap {
             width: 800px;
             height: 480px;
@@ -57,13 +83,16 @@
             background-color:#F3D3CA;
         }
         .bg-6 {
-            background-color:rgb(255, 255, 255);
+            background-color:rgb(251, 243, 124);
+            
         }
     </style>
 </head>
 <body>
-    
-        <div class="container-fluid d-flex">
+    <div class="banner"></div>
+    <nav class="navbar">pokemon</nav>
+        
+        <div class="container d-flex">
             <div class="bg-change mt-3">
                 <div class="bg bg-1"></div>
                 <div class="bg bg-2"></div>
@@ -105,6 +134,25 @@
 
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
+        $(window).scroll(function() {
+            console.log('window-scrollTop',$(window).scrollTop());
+            console.log('nav-offset-top',$('nav').offset().top);
+
+
+            if($(window).scrollTop()>= $('nav').offset().top) {
+                $('nav').css('background','rgb(251, 243, 124)').css('transition','1s').addClass('fixed');
+
+                //當$(window).scrollTop()比nav所在的位置還要下面時，就fixed固定
+            }
+
+            if($(window).scrollTop() <= $('.banner').outerHeight(true)) {
+                console.log('banner-outerHeight',$('.banner').outerHeight(true))
+                $('nav').css('background',' rgb(96, 184, 115)').css('transition','1s').removeClass('fixed');
+
+                //返回時超banner(outerHeight)的高度時就取消fixed
+            }
+        })
+
         $('#right').on('click', function (){
             console.log('right')
             if(parseInt($('img').css('left')) >= 600) return;
@@ -183,6 +231,8 @@
             let bgcolor = $('.bg-6').css('background-color')
             $('body').css('background-color',bgcolor)
         })
+
+
     </script>
     
 </body>
