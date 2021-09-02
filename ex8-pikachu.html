@@ -37,6 +37,8 @@
             right: 0;
             top: 0;
             transition: 1s;
+            z-index:1;
+            /* 讓他浮到最上面超過absolute跟fixed */
         }
 
         .wrap {
@@ -156,46 +158,52 @@
         $('#right').on('click', function (){
             console.log('right')
             if(parseInt($('img').css('left')) >= 600) return;
-            $('img').css('left','+=80')
+            $('.sky>div>img').css('left','+=80')
         })
         $('#down').on('click', function (){
             console.log('down')
             if(parseInt($('img').css('top')) >= 345) return;
-            $('img').css('top','+=80')
+            $('.sky>div>img').css('top','+=80');
         })
         $('#left').on('click', function (){
             console.log('left')
             if(parseInt($('img').css('left')) <= 0) return;
-            $('img').css('left','-=80')
+            $('.sky>div>img').css('left','-=80');
         })
         $('#up').on('click', function (){
             console.log('up')
             if(parseInt($('img').css('top')) <= 0) return;
-            $('img').css('top','-=80')
+            $('.sky>div>img').css('top','-=80');
         })
         //可以監聽DOM，按鍵盤上下左右
         $(document).on('keydown',function() {
             console.log('event',event.which)
+            
+            console.log('.sky>div>img:',$('.sky>div>img'))
 
             //left 37
             if(event.which === 37){
-                if(parseInt($('img').css('left')) <= 0) return;
-                $('img').css('left','-=80')
+                if(parseInt($('.sky>div>img').css('left')) <= 0) return;
+                $('.sky>div>img').css('left','-=80')
+                return false;
             }
             //right 39
             if(event.which === 39){
-                if(parseInt($('img').css('left')) >= 600) return;
-                $('img').css('left','+=80')
+                if(parseInt($('.sky>div>img').css('left')) >= 600) return;
+                $('.sky>div>img').css('left','+=80')
+                return false;
             }
             //up 38
             if(event.which === 38){
-                if(parseInt($('img').css('top')) <= 0) return;
-                $('img').css('top','-=80')
+                if(parseInt($('.sky>div>img').css('top')) <= 0) return;
+                $('.sky>div>img').css('top','-=80')
+                return false;
             }
             //down 40
             if(event.which === 40){
-                if(parseInt($('img').css('top')) >= 345) return;
-                $('img').css('top','+=80')
+                if(parseInt($('.sky>div>img').css('top')) >= 345) return;
+                $('.sky>div>img').css('top','+=80')
+                return false;
             }
 
 
