@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap { 
+            height: 400px;
+            width: 800px;
+            background-color: rgb(173, 173, 173);
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        $('.wrap').on('click', function(){
+            console.log('wrap click');
+            console.log('wrap click target',event.target); //box  主動觸發的人
+            console.log('wrap click currentTarget',event.currentTarget); //wrap  被動被觸發的人
+            console.log('wrap click this',$(this)); //wrap
+            //currentTarget和this通常是同一人，但target不一定是同一人
+
+        })
+        $('.box').on('click', function(){
+            console.log('box click');
+            console.log('box click target',event.target); //box
+            console.log('box click currentTarget',event.currentTarget); //box
+
+            // e.stopPropagation(); 可以解決
+        })
+        //當點擊box的時候同時wrap也會被點擊，不是因為放在同一個地方所以兩個都會被按到，而是因為從window傳下去捕獲到被點擊的box完後，會產生bubbling冒泡階段再傳回去，因為父層wrap也有一個監聽事件在她往回的路徑之中，所以他會被動被觸發。可以設定e.stopPropagation();來解決這個問題。
+    </script>
+</body>
+</html>

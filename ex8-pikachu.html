@@ -137,8 +137,8 @@
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
         $(window).scroll(function() {
-            console.log('window-scrollTop',$(window).scrollTop());
-            console.log('nav-offset-top',$('nav').offset().top);
+            // console.log('window-scrollTop',$(window).scrollTop());
+            // console.log('nav-offset-top',$('nav').offset().top);
 
 
             if($(window).scrollTop()>= $('nav').offset().top) {
@@ -148,38 +148,46 @@
             }
 
             if($(window).scrollTop() <= $('.banner').outerHeight(true)) {
-                console.log('banner-outerHeight',$('.banner').outerHeight(true))
+                // console.log('banner-outerHeight',$('.banner').outerHeight(true))
                 $('nav').css('background',' rgb(96, 184, 115)').css('transition','1s').removeClass('fixed');
 
                 //返回時超banner(outerHeight)的高度時就取消fixed
             }
         })
 
+        //更換角色
+        // $('.sky>div>img').on('click', function() {
+        //     // console.log('img-wrap attr-src:',$('.sky>div>img').attr('src'));
+        //     $('.sky>div>img').attr('src','./imgs/Sparky.gif')
+        //     // $('.sky>div>img').attr('src','./imgs/Pikachu Running .gif')
+        //     //點擊換圖
+        // })
+
         $('#right').on('click', function (){
-            console.log('right')
+            // console.log('right')
             if(parseInt($('img').css('left')) >= 600) return;
             $('.sky>div>img').css('left','+=80')
         })
         $('#down').on('click', function (){
-            console.log('down')
+            // console.log('down')
             if(parseInt($('img').css('top')) >= 345) return;
             $('.sky>div>img').css('top','+=80');
         })
         $('#left').on('click', function (){
-            console.log('left')
+            // console.log('left')
             if(parseInt($('img').css('left')) <= 0) return;
             $('.sky>div>img').css('left','-=80');
         })
         $('#up').on('click', function (){
-            console.log('up')
+            // console.log('up')
             if(parseInt($('img').css('top')) <= 0) return;
             $('.sky>div>img').css('top','-=80');
         })
         //可以監聽DOM，按鍵盤上下左右
         $(document).on('keydown',function() {
-            console.log('event',event.which)
+            // console.log('event',event.which)
             
-            console.log('.sky>div>img:',$('.sky>div>img'))
+            // console.log('.sky>div>img:',$('.sky>div>img'))
 
             //left 37
             if(event.which === 37){

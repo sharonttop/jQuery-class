@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-wrap{
+            width: 100px;
+            height: 100px;
+        }
+        .img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrap">
+        <img src="./imgs/airplane.png" alt="">
+    </div>
+    <button id="pikachu">Pikachu</button>
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        $('#pikachu').on('click', function() {
+            console.log('pikachu attr-id:',$('#pikachu').attr('id'));
+            console.log('img-wrap attr-src:',$('.img-wrap img').attr('src'));
+            $('.img-wrap img').attr('src','./imgs/3.png')
+            //點擊換圖
+        })
+    </script>
+    
+</body>
+</html>
