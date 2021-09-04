@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #faf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- append here -->
+            </ul>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        //type 型態很重要
+        $('ul').append('<li>item 3</li>')
+        $('ul').append('<li>item 4</li>')
+        $('ul').append('<div class="box">box</div>')
+
+        // for(let i = 0; i<10;i++){
+        //     $('ul').append(`<li>item ${i+3}</li>`)
+        // }
+        
+        //原生js
+        // const body = document.querySelector('body')
+        // let addDiv = document.createElement('div');
+        // addDiv.classList.add('box');
+
+        // 原生js不接受字串。
+        
+    </script>
+    
+</body>
+</html>

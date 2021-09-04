@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #faf;
+        }
+        .del-text{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <input type="text">
+            <button>add</button>
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- append here -->
+            </ul>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        $('button').on('click', function (){
+            const msg =$('input').val();
+            if(msg) {
+                $('ul').prepend(`<li>${msg}</li>`)
+                //將input的值增加到
+            }
+        })
+        $('ul').on('click','li',function (){
+            $(this).toggleClass('del-text')
+            //增加刪除線
+        })
+
+    </script>
+    
+</body>
+</html>

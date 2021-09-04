@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #removeBtn{
+            position: absolute;
+            /* 浮起來不占高跟寬 */
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            opacity: 0;
+            /* 一鍵輸入寫法，雖然看不到但是有功能的按鈕 */
+        }
+
+    </style>
+</head>
+<body>
+    <button id="removeBtn">click</button>
+    <!-- 有些套件的消失方法(消失或轉換分頁)是使用opacity: 0 (變透明但占空間)不是display:none(在頁面上不占空間)。 -->
+    <button id="addBtn">add</button>
+    <div class="container">
+        <div class="row">
+            <h1 class="hello helloWorld">Hello World</h1>
+            <h1 class="hello helloWorld1">Hello World1</h1>
+            <h1 class="hello helloWorld2">Hello World2</h1>
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        $('#removeBtn').on('click', function(){
+            $('.helloWorld1').remove();
+        })
+        $('#addBtn').on('click', function(){
+            $('.row').after('<h1>HelloWorld1</h1>');
+        })
+    </script>
+</body>
+</html>

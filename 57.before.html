@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #faf;
+        }
+        .del-text{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- before -->
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- append -->
+            </ul>
+            <!-- after -->
+        </div>
+    </div>
+    <script src="./jquery/jquery-3.6.0.js"></script>
+    <script>
+        $('ul').before("<li>item 3</li>") //增加在父層外面之上
+        $('ul').after("<li>item 4</li>") //增加在父層外面之下
+
+    </script>
+    
+</body>
+</html>
