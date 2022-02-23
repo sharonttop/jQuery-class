@@ -12,12 +12,12 @@
     
         body {
             background-color: #F2CA52;
-            height: 500vh;
+            height: 200vh;
 
         }
         .banner{
             height: calc(60vh - 60px);
-            background:url(./imgs/pokemon-banner2.jpg) no-repeat 50% 45%;
+            background:url(./imgs/pokemon-banner6.jpeg) no-repeat 50% 43% ;
             background-size: cover;
 
         }
@@ -26,7 +26,9 @@
             background-color: rgb(96, 184, 115);
             text-align: center;
             color: rgb(245, 245, 245);
-            
+            font-weight: bold;
+            letter-spacing:2px;
+            font-size: 1.2rem;
             position: static;
             /* 預設position: static不用設定; */
         }
@@ -91,48 +93,48 @@
     </style>
 </head>
 <body>
-    <div class="banner"></div>
-    <nav class="navbar">pokemon</nav>
+    <div class="">
+        <div class="banner"></div>
+        <nav class="navbar">Pikachu control jQuery作品</nav>
         
-        <div class="container d-flex mt-5">
-            <div class="bg-change">
-                <div class="bg bg-1"></div>
-                <div class="bg bg-2"></div>
-                <div class="bg bg-3"></div>
-                <div class="bg bg-4"></div>
-                <div class="bg bg-5"></div>
-                <div class="bg bg-6"></div>
-            </div>
-            <div class="wrap mx-auto ">
-                <div class="sky">
-                    <div>
-                        <img src="./imgs/Pikachu Running .gif" alt="">
+            <div class="container d-flex mt-5">
+                <div class="bg-change">
+                    <div class="bg bg-1"></div>
+                    <div class="bg bg-2"></div>
+                    <div class="bg bg-3"></div>
+                    <div class="bg bg-4"></div>
+                    <div class="bg bg-5"></div>
+                    <div class="bg bg-6"></div>
+                </div>
+                <div class="wrap mx-auto ">
+                    <div class="sky">
+                        <div>
+                            <img src="./imgs/Pikachu Running .gif" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="py-3 text-center">
-            <div>
-                <button id="up" class="btn btn-info">
-                    <i class="fas fa-caret-up"></i>
-                </button>
+            <div class="py-3 text-center">
+                <div>
+                    <button id="up" class="btn btn-info">
+                        <i class="fas fa-caret-up"></i>
+                    </button>
+                </div>
+                <div class="py-1">
+                    <button id="left" class="btn btn-info mx-3">
+                        <i class="fas fa-caret-left"></i>
+                    </button>
+                    <button id="right" class="btn btn-info mx-3">
+                        <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+                <div>
+                    <button id="down" class="btn btn-info">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </div>
             </div>
-            <div class="py-1">
-                <button id="left" class="btn btn-info mx-3">
-                    <i class="fas fa-caret-left"></i>
-                </button>
-                <button id="right" class="btn btn-info mx-3">
-                    <i class="fas fa-caret-right"></i>
-                </button>
-            </div>
-            <div>
-                <button id="down" class="btn btn-info">
-                    <i class="fas fa-caret-down"></i>
-                </button>
-            </div>
-        </div>
+    </div>
 
     <script src="./jquery/jquery-3.6.0.js"></script>
     <script>
@@ -142,7 +144,7 @@
 
 
             if($(window).scrollTop()>= $('nav').offset().top) {
-                $('nav').css('background','rgb(251, 243, 124)').css('transition','1s').addClass('fixed');
+                $('nav').css('background','rgb(244, 164, 133)').css('transition','1s').addClass('fixed');
 
                 //當$(window).scrollTop()比nav所在的位置還要下面時，就fixed固定
             }
@@ -157,9 +159,9 @@
 
         //更換角色
         // $('.sky>div>img').on('click', function() {
-        //     // console.log('img-wrap attr-src:',$('.sky>div>img').attr('src'));
+        //     console.log('img-wrap attr-src:',$('.sky>div>img').attr('src'));
         //     $('.sky>div>img').attr('src','./imgs/Sparky.gif')
-        //     // $('.sky>div>img').attr('src','./imgs/Pikachu Running .gif')
+        //     $('.sky>div>img').attr('src','./imgs/Pikachu Running .gif')
         //     //點擊換圖
         // })
 
