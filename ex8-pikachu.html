@@ -223,32 +223,33 @@
             }
         })
 
-        //更換角色
-        // $('.pikachu').on('click', function() {
-        //     console.log('img-wrap attr-src:',$('.pikachu').attr('src'));
-        //     $('.pikachu').attr('src','./imgs/Sparky.gif')
-        //     $('.pikachu').attr('src','./imgs/Pikachu Running .gif')
-        //     //點擊換圖
-        // })
+        //更換角色(點擊換圖)
+        $('.pikachu').on('click', function() {
+            if($('.pikachu>img').attr('src')!=='./imgs/Sparky.gif'){
+                $('.pikachu>img').attr('src','./imgs/Sparky.gif')
+            }else{
+                $('.pikachu>img').attr('src','./imgs/Pikachu Running .gif')
+            }
+        })
 
         $('#right').on('click', function (){
             // console.log('right')
-            if(parseInt($('img').css('left')) >= 600) return;
+            if(parseInt($('.pikachu').css('left')) >= 600) return;
             $('.pikachu').css('left','+=80')
         })
         $('#down').on('click', function (){
             // console.log('down')
-            if(parseInt($('img').css('top')) >= 345) return;
+            if(parseInt($('.pikachu').css('top')) >= 345) return;
             $('.pikachu').css('top','+=80');
         })
         $('#left').on('click', function (){
             // console.log('left')
-            if(parseInt($('img').css('left')) <= 0) return;
+            if(parseInt($('.pikachu').css('left')) <= 0) return;
             $('.pikachu').css('left','-=80');
         })
         $('#up').on('click', function (){
             // console.log('up')
-            if(parseInt($('img').css('top')) <= 0) return;
+            if(parseInt($('.pikachu').css('top')) <= 0) return;
             $('.pikachu').css('top','-=80');
         })
         //可以監聽DOM，按鍵盤上下左右
